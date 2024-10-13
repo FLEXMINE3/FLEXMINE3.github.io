@@ -121,7 +121,7 @@ header .header-container {
  height: 100px; 
  display: flex; 
  align-items: center; 
-    
+    justify-content: space-between; 
 } 
  
 .header-title { 
@@ -141,6 +141,6 @@ header .header-container {
 .header-menu ul{ 
  list-style: none; 
  display: flex; 
- 
+ justify-content: end; 
 } 
 }
