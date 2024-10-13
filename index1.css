@@ -42,9 +42,7 @@ header .header-container {
  list-style: none; 
  display: flex; 
 } 
-.header-menu ul li { 
- margin: 1dvw; 
-} 
+
 nav ul{
 	position:relative;
 	display:flex;
