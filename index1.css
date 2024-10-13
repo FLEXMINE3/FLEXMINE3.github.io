@@ -111,7 +111,7 @@ nav ul{
 main { 
     width: 100%; 
     max-width: 980px; 
-    margin: 4dvh auto 0; 
+    margin: auto; 
 } 
  .main-back{ 
     width: 100%; 
