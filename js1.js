@@ -44,7 +44,7 @@ function updatePrice() {
   });
   
   let prodPrice = document.getElementById("prodPrice");
-  prodPrice.innerHTML = price*amount + " рублей";
+  prodPrice.innerHTML = price*Math.abs(amount) + " рублей";
 }
 
 function getPrices() {
