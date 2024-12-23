@@ -1,0 +1,170 @@
+header{
+    width:100%;
+    background: rgb(136, 136, 215);
+    height: 100px;
+    background:linear-gradient(to right,black,white);
+}
+body{
+	background:linear-gradient(to right,black,violet);
+}
+.logo
+{
+    margin-left: 30px;
+    margin-top: 7px;
+}
+
+main{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type:none;
+}
+ul
+{
+    text-decoration: none;
+}
+ol{
+    text-decoration: none;
+}
+.title{
+	font-size: 36px;
+	padding-top: 25px;
+	text-align: center;
+}
+.menu{
+	list-style: none;
+	position: absolute;
+	top: 10px;
+	right: 120px;
+}
+.knopki{
+    font-size: 15px;
+    position: absolute;
+    top:10px;
+    right: 50px;
+    line-height: 22px;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+
+.table-small{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+table {
+    margin-left: 37px;
+    text-align: center;
+    border: 1px solid grey;
+    width: 15%;
+    height: 15%;
+}
+th {
+    border: 1px solid grey;
+}
+td {
+    border: 1px solid grey;
+ }
+ figure{
+    position: absolute;
+    top:-8px;
+    left:-31px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 27px;
+    
+    height:200px ;
+
+    background:linear-gradient(to right,black,white);
+    
+    }
+    
+    
+    .footer__vrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        column-gap: 30px;
+        margin-top: 60px;
+    
+     
+        
+    }
+    
+    .footer__text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    
+    .footer-text__element{
+        color: var(--header-text);
+        font-size: 16px;
+    
+    }
+
+.knopki { 
+    display: flex; 
+    flex-direction: row; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+} 
+.knopki-item { 
+    flex: 1; 
+    text-align: center; 
+} 
+  
+@media (max-width: 768px) { 
+    .knopki { 
+       flex-direction: column; 
+    } 
+    .knopki-item { 
+       flex: none; 
+       width: 100%; 
+       line-height: 1;
+    } 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.table-small {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .table-large {
+        display: none;
+    }
+
+    .table-small {
+        display: flex;
+    }
+}
