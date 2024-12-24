@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Горизонтальная галерея</title>
+    <style>
+         h2{
+        text-align:center;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url("C:/Users/user/Desktop/webE/diploma.webp") ;
+        }
+        .gallery-container {
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: calc(100% / 3); /* Измените на calc(100% / 4) для 4 изображений на странице */
+            flex-shrink: 0;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .arrow.left {
+            left: 0;
+        }
+        .arrow.right {
+            right: 0;
+        }
+        .pager {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .pager span {
+            margin: 0 5px;
+            font-size: 18px;
+        }
+        .pager .current {
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .gallery img {
+                max-width: 100%; /* Для мобильных устройств показывать одно изображение */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <button class="arrow left" onclick="moveSlider(-1)">&#8592;</button>
+        <div class="gallery" id="gallery">
+            <img src="C:\Users\user\Desktop\webE\i.webp" alt="Image 1">
+            <img src="C:\Users\user\Desktop\webE\582de10ccb5ffcd32621b3ab47084a29.jpg" alt="Image 2">
+            <img src="C:\Users\user\Desktop\webE\rozy-tsvety-rozovye-belye-lepestki-butony.jpg" alt="Image 3">
+            <img src="C:\Users\user\Desktop\webE\i (1).webp" alt="Image 4">
+            <img src="C:\Users\user\Desktop\webE\3840x2160-3840x2160-px-4k-black-colorful-daisies-flowers-garden-hd-HDR-plenty-pretty-spring-ultrahd-wallpaper-white-1743681.jpg" alt="Image 5">
+            <img src="C:\Users\user\Desktop\webE\chetverka.jpeg" alt="Image 6">
+            <img src="C:\Users\user\Desktop\webE\i (2).webp" alt="Image 7">
+            <img src="C:\Users\user\Desktop\webE\i (3).webp" alt="Image 8">
+            <img src="C:\Users\user\Desktop\webE\i (4).webp" alt="Image 8">
+        </div>
+        <button class="arrow right" onclick="moveSlider(1)">&#8594;</button>
+    </div>
+    <div class="pager" id="pager"></div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const pager = document.getElementById('pager');
+        const totalImages = gallery.children.length; // Общее количество изображений
+        const imagesPerPage = window.innerWidth > 100 ? 1 : 1; // Изображения на странице
+        const totalPages = Math.ceil(totalImages / imagesPerPage-6); // Общее количество страниц
+        let currentPage = 1;
+
+        function updatePager() {
+            pager.innerHTML = '';
+            for (let i = 1; i <= totalPages; i++) {
+                const span = document.createElement('span');
+                span.textContent = i;
+                if (i === currentPage) {
+                    span.classList.add('current');
+                }
+                pager.appendChild(span);
+            }
+        }
+
+        function moveSlider(direction) {
+            currentPage += direction; // Изменение текущей страницы
+            if (currentPage < 1) currentPage = 1; // Ограничение по нижней границе
+            if (currentPage > totalPages) currentPage = totalPages; // Ограничение по верхней границе
+            const offset = (currentPage - 1) * -100 / imagesPerPage; // Вычисление смещения
+            gallery.style.transform = `translateX(${offset}%)`; // Применение смещения
+            updatePager(); // Обновление пагинации
+        }
+
+        window.addEventListener('resize', () => {
+            currentPage = 1; // Сброс текущей страницы при изменении размера окна
+            gallery.style.transform = 'translateX(0)';
+            updatePager(); // Обновление пагинации
+        });
+
+        updatePager(); // Инициализация пагинации
+    </script>
+    <h2>Наличие цветов</h2>
+</body>
+</html>
